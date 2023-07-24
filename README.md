@@ -39,7 +39,6 @@ Data science requires a combination of technical and non-technical skills. Some 
 * Collaboration: Data scientists should be able to collaborate effectively with other members of a team, including data engineers, data analysts, and business stakeholders.
 These are just some of the key skills required for data science. The specific skills required may vary depending on the industry or application domain.
 ..........................................................................................................................................
-# Weak 2
 # Python
 # Numpy
 # Series And Dataframe
@@ -120,7 +119,6 @@ array([[1, 2, 3],
 b.shape
 (2, 3)
 .........................................................................................................................................
-# Weak 3
 # Data Types and Sources
 # types of Fetching And Data Through the API
 When working with APIs (Application Programming Interfaces), there are generally two types of data fetching methods:
@@ -150,7 +148,6 @@ import pandas as pd
 import seaborn as sns
 df = pd.read_csv('train.csv')
 .........................................................................................................................................
-# Weak 4
 # Data Cleaning and Preprocessing
 # Pivot Table Scale Meging Dataframe Groupby
 # Data Cleaning and Preprocessing
@@ -171,25 +168,19 @@ Normalization: Scaling data to a specific range, often between 0 and 1.
 Log Transformation: Taking the logarithm of skewed data to make it more normally distributed.
 Handling Outliers:
 Outliers are extreme values that differ significantly from the majority of the data. They can affect the performance of machine learning models. Options for handling outliers include:
-
 Removing outliers (only when they are erroneous data points).
 Capping or flooring outliers to a specific value.
 Transforming the data to reduce the impact of outliers.
 Encoding Categorical Variables:
 Machine learning algorithms typically require numerical inputs, so categorical variables need to be encoded. Common encoding techniques include one-hot encoding and label encoding.
-
 Feature Engineering:
 Feature engineering involves creating new features or modifying existing ones to improve the predictive power of machine learning models. This may include extracting information from text, dates, or numerical data or creating interaction terms.
-
 Data Standardization:
 Standardizing data ensures that all features have a mean of 0 and a standard deviation of 1. This is particularly important for algorithms that rely on distance calculations, like K-nearest neighbors or SVM.
-
 Handling Imbalanced Data:
 Imbalanced data occurs when one class dominates the dataset, leading to biased model performance. Techniques like oversampling, undersampling, or using class weights can address this issue.
-
 Data Integration:
 In some cases, data comes from multiple sources and needs to be integrated or merged into a single dataset for analysis.
-
 Data Reduction:
 When dealing with large datasets, data reduction techniques like PCA (Principal Component Analysis) or feature selection can be used to reduce the dimensionality of the data while preserving important information.
 ### Pivot Table
@@ -232,20 +223,14 @@ In this lecture we're going to address how you can bring multiple dataframe obje
 Venn Diagram
 
 Ok, this is a Venn Diagram. A Venn Diagram is traditionally used to show set membership. For example, the circle on the left is the population of students at a university. The circle on the right is the population of staff at a university. And the overlapping region in the middle are all of those students who are also staff. Maybe these students run tutorials for a course, or grade assignments, or engage in running research experiments.
-
 So, this diagram shows two populations whom we might have data about, but there is overlap between those populations.
-
 When it comes to translating this to pandas, we can think of the case where we might have these two populations as indices in separate DataFrames, maybe with the label of Person Name. When we want to join the DataFrames together, we have some choices to make. First what if we want a list of all the people regardless of whether they're staff or student, and all of the information we can get on them? In database terminology, this is called a full outer join. And in set theory, it's called a union. In the Venn diagram, it represents everyone in any circle.
 
 Here's an image of what that would look like in the Venn diagram.
-
 Union
-
 It's quite possible though that we only want those people who we have maximum information for, those people who are both staff and students. Maybe being a staff member and a student involves getting a tuition waiver, and we want to calculate the cost of this. In database terminology, this is called an inner join. Or in set theory, the intersection. It is represented in the Venn diagram as the overlapping parts of each circle.
-
-### Code
+## Code
 mport pandas as pd
-
  First we create two DataFrames, staff and students.
 staff_df = pd.DataFrame([{'Name': 'Kelly', 'Role': 'Director of HR'},
                          {'Name': 'Sally', 'Role': 'Course liasion'},
@@ -258,7 +243,6 @@ student_df = pd.DataFrame([{'Name': 'James', 'School': 'Business'},
                            {'Name': 'Sally', 'School': 'Engineering'}])
  And we'll index this by name too
 student_df = student_df.set_index('Name')
-
  And lets just print out the dataframes
 print(staff_df.head())
 print(student_df.head())
@@ -311,7 +295,6 @@ pd.concat(frames)
 
  Now let's try it out
 pd.concat(frames, keys=['2011','2012','2013'])
-
 ### Scales
  Let's bring in pandas as normal
 import pandas as pd
@@ -328,10 +311,8 @@ grades=df["Grades"].astype(my_categories)
 grades.head()
 df[df["Grades"]>"C"]
 grades[grades>"C"]
-
 ### Groupby/Group Data
 Sometimes we want to select data based on groups and understand aggregated data on a group level. We have seen that even though Pandas allows us to iterate over every row in a dataframe, it is generally very slow to do so. Fortunately Pandas has a groupby() function to speed up such task. The idea behind the groupby() function is that it takes some dataframe, splits it into chunks based on some key values, applies computation on those chunks, then combines the results back together into another dataframe. In pandas this is referred to as the split-apply-combine pattern.
-
 ### Code
 import pandas as pd
 import numpy as np
@@ -355,7 +336,7 @@ for state in df['STNAME'].unique():
     print('Counties in state ' + group + 
           ' have an average population of ' + str(avg))
 .......................................................................................................................................  
- ## Weak 5
+ 
  ### Exploratory Data Analysis (EDA)
  ### Basic Data Understanding Univariate And Bivariate Analysis 
  
@@ -462,7 +443,6 @@ plt.ylabel('Total Bill')
 plt.show()
 ........................................................................................................................................
 
- ## Weak 6
  ### Types of Charts And Graphs
  ### GGPLOT
 
@@ -554,7 +534,6 @@ Plot lifeExp vs. year colored by continent
 ggplot(gap, aes(x = 'year', y = 'lifeExp', color = 'continent')) + geom_point()
 .........................................................................................................................................
 
- ## Weak 7
  ### Tools for Data Visualization
  ### Data Visualization
 
